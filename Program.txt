@@ -10,7 +10,7 @@ public class StonePaperScissors extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
-
+         // deklaracja kontrolek
         buttonGroup = new javax.swing.ButtonGroup();
         jButton_seletc = new javax.swing.JButton();
         jRadioButton_stone = new javax.swing.JRadioButton();
@@ -48,6 +48,9 @@ public class StonePaperScissors extends javax.swing.JFrame {
                 jButton_seletcActionPerformed(evt);
             }
         });
+        
+        // opcje kontrolek
+        
         getContentPane().add(jButton_seletc, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
 
         buttonGroup.add(jRadioButton_stone);
@@ -155,8 +158,10 @@ public class StonePaperScissors extends javax.swing.JFrame {
 
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {                                             
         System.exit(0);
-    }                                            
-
+    }                                      
+    
+   // obsluga przycisku i radiobuttonow
+   
     private void jButton_seletcActionPerformed(java.awt.event.ActionEvent evt) {                                               
       if (buttonGroup.getSelection() == null)
         {
@@ -167,30 +172,77 @@ public class StonePaperScissors extends javax.swing.JFrame {
             int computer = ComputerPlays();
             int player = PlayerPlays();
                         
-            if (DecideWinner(computer, player) == 1) //cmp
+            if (DecideWinner(computer, player) == 1) //komputer wygrywa
             {
                 int computerScore = Integer.parseInt(jLabel_computerScore.getText());
                 jLabel_computerScore.setText(Integer.toString(computerScore + 1));
                 jLabel_computersSelection.setText(jLabel_computersSelection.getText() + " Komputer wygrał!");
             }
 
-            else if (DecideWinner(computer, player) == 2) //player
+            else if (DecideWinner(computer, player) == 2) //gracz wygrywa
             {
                 int playerScore = Integer.parseInt(jLabel_playerScore.getText());
                 jLabel_playerScore.setText(Integer.toString(playerScore + 1));
                 jLabel_computersSelection.setText(jLabel_computersSelection.getText() + " Ty Wygrałeś!");
             }
-            else //draw
+            else //remis
             {
                 jLabel_computersSelection.setText(jLabel_computersSelection.getText() + " To Remis!");
             }
         }
     }                                              
-
+      // main
+      
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new StonePaperScissors().setVisible(true);
             }
         });
+    }
+  // deklaracje zmiennych - nie modyfikowac!                    
+    private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.ButtonGroup buttonGroup;
+    private javax.swing.JMenuItem contentsMenuItem;
+    private javax.swing.JMenuItem copyMenuItem;
+    private javax.swing.JMenuItem cutMenuItem;
+    private javax.swing.JMenuItem deleteMenuItem;
+    private javax.swing.JMenu editMenu;
+    private javax.swing.JMenuItem exitMenuItem;
+    private javax.swing.JMenu fileMenu;
+    private javax.swing.JMenu helpMenu;
+    private javax.swing.JButton jButton_seletc;
+    private javax.swing.JLabel jLabel_computer;
+    private javax.swing.JLabel jLabel_computerScore;
+    private javax.swing.JLabel jLabel_computersSelection;
+    private javax.swing.JLabel jLabel_paper;
+    private javax.swing.JLabel jLabel_player;
+    private javax.swing.JLabel jLabel_playerScore;
+    private javax.swing.JLabel jLabel_scissors;
+    private javax.swing.JLabel jLabel_stone;
+    private javax.swing.JRadioButton jRadioButton_paper;
+    private javax.swing.JRadioButton jRadioButton_scissors;
+    private javax.swing.JRadioButton jRadioButton_stone;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenuItem openMenuItem;
+    private javax.swing.JMenuItem pasteMenuItem;
+    private javax.swing.JMenuItem saveAsMenuItem;
+    private javax.swing.JMenuItem saveMenuItem;
+    // koniec deklaracji
+    
+    // funkcja losujaca
+    //1 -> kamień; 2 -> papier; 3 -> nozyce
+    private int ComputerPlays()
+    {
+        Random rnd = new Random();
+        int selection = (rnd.nextInt(3) + 1);
+        
+        if (selection == 1)
+            jLabel_computersSelection.setText("Komputer wybrał: kamień");
+        if (selection == 2)
+            jLabel_computersSelection.setText("Komputer wybrał: papier.");
+        if (selection == 3)
+            jLabel_computersSelection.setText("Komputer wybrał: nożyce");
+        
+        return selection;
     }
