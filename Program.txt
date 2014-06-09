@@ -172,14 +172,14 @@ public class StonePaperScissors extends javax.swing.JFrame {
             int computer = ComputerPlays();
             int player = PlayerPlays();
                         
-            if (DecideWinner(computer, player) == 1) //komputer wygrywa
+            if (DecideWinner(computer, player) == 1) //wygrywa komputer
             {
                 int computerScore = Integer.parseInt(jLabel_computerScore.getText());
                 jLabel_computerScore.setText(Integer.toString(computerScore + 1));
                 jLabel_computersSelection.setText(jLabel_computersSelection.getText() + " Komputer wygrał!");
             }
 
-            else if (DecideWinner(computer, player) == 2) //gracz wygrywa
+            else if (DecideWinner(computer, player) == 2) //wygrywa gracz
             {
                 int playerScore = Integer.parseInt(jLabel_playerScore.getText());
                 jLabel_playerScore.setText(Integer.toString(playerScore + 1));
