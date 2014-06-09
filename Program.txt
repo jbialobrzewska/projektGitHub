@@ -167,7 +167,7 @@ public class StonePaperScissors extends javax.swing.JFrame {
             int computer = ComputerPlays();
             int player = PlayerPlays();
                         
-            if (DecideWinner(computer, player) == 1) //cmp
+            if (DecideWinner(computer, player) == 1) // wywołanie funkcji sprawdzającej kto wygrał
             {
                 int computerScore = Integer.parseInt(jLabel_computerScore.getText());
                 jLabel_computerScore.setText(Integer.toString(computerScore + 1));
