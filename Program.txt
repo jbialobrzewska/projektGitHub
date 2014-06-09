@@ -173,3 +173,32 @@ public class StonePaperScissors extends javax.swing.JFrame {
                 jLabel_computerScore.setText(Integer.toString(computerScore + 1));
                 jLabel_computersSelection.setText(jLabel_computersSelection.getText() + " Komputer wygrał!");
             }
+//Bartosz
+    //1 -> stone; 2 -> paper; 3 -> scissors
+    private int PlayerPlays()
+    {
+        if (jRadioButton_stone.isSelected())
+            return 2;
+        if (jRadioButton_paper.isSelected())
+            return 2;
+        if (jRadioButton_scissors.isSelected())
+            return 3;
+        
+        return 0;
+    }
+    
+    //1 -> computer, 2 -> player, 0 -> draw
+    private int DecideWinner(int computer, int player)
+    {
+        if (computer == player) //draw
+            return 0;
+        if (computer == 1 && player == 3) //cmp
+            return 1;
+        else if (computer == 2 && player == 1) //cmp
+            return 1;
+        else if (computer == 3 && player == 2) //cmp
+            return 1;
+        else //player won
+            return 2;
+    }
+}
