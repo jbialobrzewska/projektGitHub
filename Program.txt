@@ -1,0 +1,175 @@
+import java.util.Random;
+import javax.swing.JOptionPane;
+
+
+public class StonePaperScissors extends javax.swing.JFrame {
+   public StonePaperScissors() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        buttonGroup = new javax.swing.ButtonGroup();
+        jButton_seletc = new javax.swing.JButton();
+        jRadioButton_stone = new javax.swing.JRadioButton();
+        jRadioButton_paper = new javax.swing.JRadioButton();
+        jRadioButton_scissors = new javax.swing.JRadioButton();
+        jLabel_stone = new javax.swing.JLabel();
+        jLabel_paper = new javax.swing.JLabel();
+        jLabel_scissors = new javax.swing.JLabel();
+        jLabel_computer = new javax.swing.JLabel();
+        jLabel_player = new javax.swing.JLabel();
+        jLabel_computerScore = new javax.swing.JLabel();
+        jLabel_playerScore = new javax.swing.JLabel();
+        jLabel_computersSelection = new javax.swing.JLabel();
+        menuBar = new javax.swing.JMenuBar();
+        fileMenu = new javax.swing.JMenu();
+        openMenuItem = new javax.swing.JMenuItem();
+        saveMenuItem = new javax.swing.JMenuItem();
+        saveAsMenuItem = new javax.swing.JMenuItem();
+        exitMenuItem = new javax.swing.JMenuItem();
+        editMenu = new javax.swing.JMenu();
+        cutMenuItem = new javax.swing.JMenuItem();
+        copyMenuItem = new javax.swing.JMenuItem();
+        pasteMenuItem = new javax.swing.JMenuItem();
+        deleteMenuItem = new javax.swing.JMenuItem();
+        helpMenu = new javax.swing.JMenu();
+        contentsMenuItem = new javax.swing.JMenuItem();
+        aboutMenuItem = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton_seletc.setText("Select");
+        jButton_seletc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_seletcActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_seletc, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
+
+        buttonGroup.add(jRadioButton_stone);
+        getContentPane().add(jRadioButton_stone, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
+
+        buttonGroup.add(jRadioButton_paper);
+        getContentPane().add(jRadioButton_paper, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, -1, -1));
+
+        buttonGroup.add(jRadioButton_scissors);
+        getContentPane().add(jRadioButton_scissors, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, -1, -1));
+
+        jLabel_stone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stone.jpg"))); // NOI18N
+        getContentPane().add(jLabel_stone, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 180));
+
+        jLabel_paper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/paper.jpg"))); // NOI18N
+        getContentPane().add(jLabel_paper, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, -1, -1));
+
+        jLabel_scissors.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scissors.jpg"))); // NOI18N
+        getContentPane().add(jLabel_scissors, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, -1, -1));
+
+        jLabel_computer.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel_computer.setText("COMPUTER");
+        getContentPane().add(jLabel_computer, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, -1, -1));
+
+        jLabel_player.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel_player.setText("PLAYER");
+        getContentPane().add(jLabel_player, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jLabel_computerScore.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel_computerScore.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel_computerScore.setText("0");
+        getContentPane().add(jLabel_computerScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, -1, -1));
+
+        jLabel_playerScore.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel_playerScore.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel_playerScore.setText("0");
+        getContentPane().add(jLabel_playerScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+        getContentPane().add(jLabel_computersSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 300, 20));
+
+        fileMenu.setMnemonic('f');
+        fileMenu.setText("File");
+
+        openMenuItem.setMnemonic('o');
+        openMenuItem.setText("Open");
+        fileMenu.add(openMenuItem);
+
+        saveMenuItem.setMnemonic('s');
+        saveMenuItem.setText("Save");
+        fileMenu.add(saveMenuItem);
+
+        saveAsMenuItem.setMnemonic('a');
+        saveAsMenuItem.setText("Save As ...");
+        saveAsMenuItem.setDisplayedMnemonicIndex(5);
+        fileMenu.add(saveAsMenuItem);
+
+        exitMenuItem.setMnemonic('x');
+        exitMenuItem.setText("Exit");
+        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitMenuItemActionPerformed(evt);
+            }
+        });
+        fileMenu.add(exitMenuItem);
+
+        menuBar.add(fileMenu);
+
+        editMenu.setMnemonic('e');
+        editMenu.setText("Edit");
+
+        cutMenuItem.setMnemonic('t');
+        cutMenuItem.setText("Cut");
+        editMenu.add(cutMenuItem);
+
+        copyMenuItem.setMnemonic('y');
+        copyMenuItem.setText("Copy");
+        editMenu.add(copyMenuItem);
+
+        pasteMenuItem.setMnemonic('p');
+        pasteMenuItem.setText("Paste");
+        editMenu.add(pasteMenuItem);
+
+        deleteMenuItem.setMnemonic('d');
+        deleteMenuItem.setText("Delete");
+        editMenu.add(deleteMenuItem);
+
+        menuBar.add(editMenu);
+
+        helpMenu.setMnemonic('h');
+        helpMenu.setText("Help");
+
+        contentsMenuItem.setMnemonic('c');
+        contentsMenuItem.setText("Contents");
+        helpMenu.add(contentsMenuItem);
+
+        aboutMenuItem.setMnemonic('a');
+        aboutMenuItem.setText("About");
+        helpMenu.add(aboutMenuItem);
+
+        menuBar.add(helpMenu);
+
+        setJMenuBar(menuBar);
+
+        pack();
+    }// </editor-fold>                        
+
+    private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        System.exit(0);
+    }                                            
+
+    private void jButton_seletcActionPerformed(java.awt.event.ActionEvent evt) {                                               
+      if (buttonGroup.getSelection() == null)
+        {
+            JOptionPane.showMessageDialog(null, "Wybierz kamień papier bądź nożyce");
+        }
+        else
+        {
+            int computer = ComputerPlays();
+            int player = PlayerPlays();
+                        
+            if (DecideWinner(computer, player) == 1) //cmp
+            {
+                int computerScore = Integer.parseInt(jLabel_computerScore.getText());
+                jLabel_computerScore.setText(Integer.toString(computerScore + 1));
+                jLabel_computersSelection.setText(jLabel_computersSelection.getText() + " Komputer wygrał!");
+            }
